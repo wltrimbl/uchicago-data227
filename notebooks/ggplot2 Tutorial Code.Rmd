@@ -1,0 +1,273 @@
+---
+title: "DATA 227"
+subtitle: "Uncertainty in Data Visualizations"
+date: "2022-11-17"
+format: pdf_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy = TRUE, fig.align = "center", cache = TRUE, fig.width = 6, fig.height = 3)
+library(dplyr)
+library(ggplot2)
+library(reticulate)
+#use_python("/usr/local/bin/python3")
+```
+
+# Using R
+
+## Introduction to Storage
+
+```{r}
+a <- 3
+```
+
+## Reviewing Data Types and Structures
+
+-   Consider an example with your first name stored as a character string `name`, a number describing the amount of siblings you have as `siblings`, and a vector containing the digits of your phone number as `phone`.
+-   Once you save an object (or use an object stored in R), you may need to check the storage type of the object. You can do so using the functions `class()` and `mode()`.
+
+```{r}
+name <- "Amy"
+siblings <- 6
+phone <- c(6, 3, 0, 8, 7, 5)
+
+test_vec <- c(name, siblings, phone)
+```
+
+## Lists
+
+-   The previous line of code creates a vector of all of the different values in the objects `name`, `siblings`, and `phone`, but you can't tell which object each value belongs to--everything is combined.
+-   Furthermore, the storage type of the entire vector is automatically character, even though `siblings` and `phone` are both numeric.
+-   There are times when it useful to create a vector of different objects, where the objects maintain their original structures. This is essentially the function of a list in R.
+
+```{r}
+test_list <- list(name, siblings, phone)
+test_list
+```
+
+## More Lists
+
+-   Each of the original objects are contained in `test_list`. Theoretically, you could extract each of these objects in their original forms.
+
+```{r}
+test_list[[1]]
+```
+
+-   Here, I extract my name, since it's the `1`st element. You can also extract using the dollar sign operator.
+
+```{r}
+test_list$Phone
+```
+
+## Even More Lists
+
+-   We expected to extract the digits in our phone numbers, but we were unable to extract anything. This is because we need to supply names for each element in the list.
+
+```{r}
+names(test_list) <- c("Name", "Siblings", "Phone")
+names(test_list)
+test_list$Phone
+```
+
+-   You can find out which elements are contained in a list by using `names()"`. You can also find it using `attributes()`.
+
+# Introduction to `ggplot2`
+
+## Packages
+
+-   R comes with a decent amount of built-in functionality, but to do anything useful you will need to install and load **packages** that contain additional functionality.
+-   Similar to modules in Python, you only need to install a package once, which can be done in the lower righthand window in RStudio under the "Packages" tab.
+-   Packages must be loaded any time you want to use them in an R document. You load packages with the `library` command. 
+* We are going to work with `dplyr` and `ggplot2`.
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+## Introduction to Data Frames
+
+-   Most of the `tidyverse` requires that you are working with a data structure called a data frame.
+-   A data frame is a special type of list--each element of the list is a vector, and all of the vectors are the same length.
+-   In a data frame, each vector (column) represents a different variable.
+-   Each row represents a different observation/subject.
+-   We will be using the `starwars` data frame.
+
+```{r}
+data("starwars")
+```
+
+## Introduction to `ggplot2` 2
+
+-   You tell `ggplot2` what data to use, how to map the variables to the different aesthetics of the graph, and what type of graph you need--`ggplot2` takes care of the rest!\
+-   First, we start by providing the data and mapping the variables to the graph's *aesthetics*--what's on the $x$-axis, what color the graph is, etc.
+-   A sample line of code for investigating the heights of different characters appears below.
+
+```{r}
+ggplot(data = starwars, aes(x = height))
+```
+
+-   If you run this chunk, a nearly blank box should appear--but no actual graph.
+
+## Histograms 1
+
+-   To add a plot, we add geometric objects, or *geoms*. Specifically, for a histogram, we use `+ geom_histogram()`.
+
+```{r}
+ggplot(data = starwars, aes(x = height)) + 
+  geom_histogram()
+```
+
+## Histograms 2
+
+-   Do you see a warning message saying "`Pick better value with binwidth`"? This error is unique to `geom_histogram()`.
+-   To fix the warning, we can change the number of bins by adding a new argument, `bins = 10`, into the "`geom_histogram()`" function.
+
+```{r}
+ggplot(data = starwars, aes(x = height)) +
+  geom_histogram(bins = 10)
+```
+
+## Densities 1
+
+-   Notice that on the $y$-axis, we are displaying the counts of the observations.
+-   We can change this to instead display the frequency by adding another argument to `geom_histogram()`.
+
+```{r}
+ggplot(data = starwars, aes(x = height)) +
+  geom_histogram(bins = 10, aes(y=..density..))
+```
+
+## Densities 2
+
+-   This way, we can directly compare a histogram and a density plot!
+
+```{r}
+ggplot(data = starwars, aes(x = height)) +
+  geom_histogram(bins = 10, aes(y=..density..)) +
+  geom_density()
+```
+
+## Boxplots
+
+-   Now, we can try creating a box plot. Remember that we use boxplots to look at the distributions over different levels of a categorical variable.
+-   To create a plot with a boxplot for every level, you can add a `y =` argument to the aesthetics function.
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = sex)) +
+  geom_boxplot()
+```
+
+## Colors 1
+
+-   You may also be interested in changing colors on your graph.
+    -   Adding a `color = "red"` argument to the `geom_boxplot()` statement.
+    -   You can use this [R color guide](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) to look up the available colors.
+-   In addition, you can change the color according to the categorical variable, so that each level is its own color. To do this, you can change the `color` argument to be the name of a variable (in this case, `sex`) inside the `aes()` statement (rather than `geom_boxplot()`).
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = sex, color = sex)) +
+  geom_boxplot()
+```
+
+## Changing Axes 3
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = sex, color = sex)) +
+  geom_boxplot() +
+  xlab("Height") +
+  ylab("Sex") +
+  scale_y_discrete(labels = c("Female", "Hermaphroditic", "Male", 
+                              "None", "NA"))
+```
+
+## Order Matters!
+
+```{r echo = TRUE, fig.height = 1.25, fig.width = 5}
+ggplot(data = starwars, aes(x = height, y = sex, color = sex)) +
+  geom_boxplot() +
+  xlab("Height") +
+  ylab("Sex") +
+  scale_y_discrete(name = "Something Else", labels = c("Female",
+                  "Hermaphroditic", "Male", "None", "NA"))
+```
+
+## Facetting by Row
+
+-   To separate by row, place the variable name on the left hand side of the `~` and a period on the right hand side.
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = mass, color = sex)) +
+  facet_grid(sex~.) +
+  geom_point() +
+  theme(legend.position = "none")
+```
+
+## Facetting by Column
+
+* To separate by column, place the variable name on the right hand side of the `~` and a period on the left hand side.
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = mass, color = sex)) +
+  facet_grid(.~sex) +
+  geom_point() +
+  theme(legend.position = "none")
+```
+
+## Facetting by Row and Column 1
+
+* You can facet by more than one variable!
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = mass, color = sex)) +
+  facet_grid(sex~gender) +
+  geom_point() +
+  theme(legend.position = "none")
+```
+
+## Themes 1
+
+* If you want all of your graphs to have a consistent appearance, you might want to use different themes. 
+* Themes control the "non-data" aspects of your graph. 
+  + `theme_grey()`, `theme_bw()`, `theme_linedraw()`, `theme_light()`, `theme_dark()`, `theme_minimal()`, `theme_classic()`, `theme_void()`, `theme_test()`
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = mass, color = sex)) +
+  facet_grid(.~sex) +
+  geom_point() +
+  theme_dark()
+```
+
+## Themes 3
+
+* You can also control ALL of the non-data aspects (for example, legend position, text size, label justification, etc.) with `theme()`--see `legend.position = "none"` in the previous slides. 
+* Other arguments include:
+  + `line` (all line elements)
+  + `rect` (all rectangular elements)
+  + `text` (all text elements)
+  + `title` (all title elements)
+* There are also a ton of "sub" elements! See `?theme()`. As a note, you are unlikely to have these memorized--I have to look up exactly how to use the different arguments most times.  
+
+# Combining R and Python 1
+
+If you DON'T want to learn `dplyr`, you can also do all of your data wrangling in Python via R!
+
+```{r}
+library(reticulate)
+```
+
+```{python}
+r.starwars.head()
+```
+
+```{python}
+starwars = r.starwars
+```
+
+```{r}
+ggplot(data = py$starwars, aes(x = height)) +
+  geom_histogram()
+```
+
+Follow [this tutorial](https://cran.r-project.org/web/packages/reticulate/vignettes/calling_python.html) if you are interested. 
