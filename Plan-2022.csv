@@ -1,0 +1,21 @@
+Class	Date in 2022	Slides 	Notebooks 	Assignments
+Week 1a	Sep 27	01-VALUE.odp	01-census.ipynb	
+Week 1b	Sep 29	02-Tidy-data-lecture.pdf		
+Week 2a	Oct 4 	03-ENCODINGS.odp	altair-introduction	
+Week 2b	Oct 6 	04-CATEGORICAL-OPTIONS.odp	04-OPTIONS-CLEAN, altair_scales_legends	HW1:  1.  Cigarette dataset: line graphs, labeling.   2.  open-ended visualization of population pyramids
+Week 3a	Oct 11	05-TRANSFORM-PROV	05-BIRTHSDATA 05-betterresolution,  altair_data_transofrmation	
+Week 3b	Oct 13	06-Quarto-Lecture.pdf	Hurricane-maria.ipynb	HW2:  1.  Hurricane scatterplot w/ lots of channels; Hurricane track.  2.  Open-ended viz of Chicago salary database
+Week 4a	Oct 18	07-DECEPT1.odp	Hurricane-iota  BIRTHSDATA-2 	
+Week 4b	Oct 20	08-Color-Lecture.pdf	WhoByFireball	HW3:  1.  Fireball database; histograms; logarithmic-binning of histograms;  2.  CDC birth census data; 2-d histogram if possible.
+Week 5a	Oct 25	09-COLOR1.ods, 08-DECEPTION		
+Week 5b	Oct 27	10-COLOR2	counties-join	
+Week 6a	Nov 1 	11-MAPS	choropleth 	HW4:  1.  Huricane gender histogram; scatterplots with points highlighted; custom color palletes.  2. Use a new  kind of viz.
+Week 6b	Nov 3 	12-NETWORK	Lidar-COLORMAPS MNIST-clustermap	PROJECT:  Black hat / white hat paired visualizations.
+Week 7a	Nov 8 	13-Uncertainty-Lecture.pdf		
+Week 7b	Nov 10	14-Uncertainty-Lecture-pt-II.pdf	World-choropleth-example 	
+Week 8a	Nov 15	15-NETWORKS2.ods, 15-ANIMATE.odp, TIPS.odp	Networks.ipynb	
+Week 8b	Nov 17	16-ggplot2-tutorial	ggplot2 Tutorial Code.Rmd	HW5: 1.   Heroic table join; choropleth map; zoom in on europe;   2. Scatterplot with error bars   3. Interactive visualization.
+Week 9a	Nov 29	17-PERCEPT1.ods	barchartraces, two-line gapminder, SRTM	FINAL PROJECT: open ended storytelling with a sequence of visualizations
+Week 9b	Dec 1 	18-Captions and tables.pdf		
+Leftover			altair_debugging, altiar_interaction, altair_view_composition, altair_cartographic	
+
