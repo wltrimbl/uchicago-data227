@@ -1,0 +1,139 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\begin{center}
+{\Large Data 227 - Autumn 2023 \hspace{0.5cm} HW 1}\\
+\textbf{Data Visualization and Communication - Trimble}\\ %You should put your name here
+Due: Friday October 6, 2023  11:59pm 
+\end{center}
+
+\vspace{0.2 cm}
+
+
+\subsection*{Homework 1, Population pyramid + longitudinal cigarette sales}
+
+Upload your responses to Canvas as PDF or HTML files; please put your answers to both questions in a single file.  Attach the most relevant pieces of your code in any convenient format, but if your answers are not in PDF or HTML we will send your homework back ungraded.
+
+\begin{enumerate}
+\item\label{cigarettes}
+
+The Cigarette.csv file contains an "untidy" dataset with different variables related to cigarette sales from 1985-1995 in the 48 contiguous United States. There are three mistakes–fix them so that the dataset would be considered tidy. Your final dataset should have 528 rows and 9 columns.  (This dataset was published in the textbook Stock, James H. and Mark W. Watson (2003) Introduction to Econometrics, Addison-Wesley Educational Publishers, and has been distributed as part of data-containing R packages for years. 
+
+B. Create a scatterplot comparing the number of packs sold per capita, Packpc, to the year, Year. Color each state the same color and put labels sufficient to identify a few of the states with the most extreme per-capita cigarette sales.  Overlapping, illegible labels are ok for this assignment.
+
+\item\label{census}
+
+For this assignment, you will create a static visualization of the population histograms from the 1900 and 2000 US. Census.  These came from the U.S. Census Bureau via IPUMS \texttt{https://www.ipums.org/} and give numbers of people enumerated in 5 year bins, age 0-4, 5-9, 10-14... up to 90+, and reported sex (1 for male, 2 for female).
+
+%\texttt{http://people.cs.uchicago.edu/~wltrimbl/class/DATA227/census1900-2000.csv}
+\texttt{data/census1900-2000.csv}  on canvas
+
+\texttt{https://canvas.uchicago.edu/courses/38293/files/folder/data} 
+
+\texttt{https://canvas.uchicago.edu/files/6084647/download}
+
+It looks like this:
+
+\texttt{
+Sex,Year,Age,People \\
+1,1900,0,4619544\\
+1,2000,0,9735380\\
+1,1900,5,4465783\\
+1,2000,5,10552146 \\
+...
+}
+
+You can read about this data, and some light commentary about age histograms in the Gilded Age in
+1900 Census: Volume II. Population, Part 2, Statistics of the Population \\
+\texttt{http://www2.census.gov/library/publications/decennial/1900/volume-2/volume-2-p2.pdf}
+
+Examine the data, ask a question of the data, and design a visualization that answers the question.
+
+Include a figure caption and at most one paragraph describing your findings, and any code you used to produce the visualization.
+
+You do not have to use any specific tools to produce the visualization but you should to find an interesting question and answer it effectively.
+
+%\begin{soln}
+%	% Put your answers here.
+%\end{soln}
+
+
+\end{enumerate}
+
+
+
+\end{document}
+
+
