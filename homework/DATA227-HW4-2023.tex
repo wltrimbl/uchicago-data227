@@ -1,0 +1,117 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{enumitem}
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+{\Large Data 227 - Autumn 2023 \hspace{0.5cm} HW 3}\\
+\textbf{Data Visualization and Communication - Trimble}\\ %You should put your name here
+Due: Friday October 27, 2023  11:59pm   
+\end{center}
+
+\vspace{0.2 cm}
+
+\begin{enumerate}
+\subsection*{Misleading visualization design pair}
+\item\label{mislead}
+
+For this assignment, you will create two static visualizations of a dataset of your choice:   a visualization engineered to obscure some truth of the data; and a visualization with an “honest” presentation of the same data.
+
+All of the tools in our toolbox can be used well or poorly, and practicing using them to mislead will make us more savvy interpreters of data.
+Some datasets that may lend themselves to deception:
+
+\begin{enumerate}
+\item Centers for Medicare and Medicaid Open Payments database (pharma compensation to prescribers, dubbed by Pro publica “Dollars for Docs”)
+\item Guttmacher Institute Public-Use Datasets on Abortion and Fertility by Geography and Year
+\item Indicators of Gender Equality from the World Bank 1960-2017
+\item Tidy Tuesday Data Repository–multiple datasets for different weeks, going back to 2018 (can also be used with Python, all data in .csv format)
+\item Washington Post’s DEA Pain Pills Database
+\end{enumerate}
+
+Your obfuscation should be free of catastrophic flaws (like axes that have no meaningful labels) and should be technically accurate (don't fake the data) but should lead readers to a conclusion about the data that is false.  (Make visualizations, find a fact in the data, make visualization to highlight the fact; negate the fact, make a new visualization, goose the visualization to make it misleading.)  
+
+Your project submission should include:
+\begin{enumerate}
+\item A figure caption for each graphic, which needs to include provenance information sufficient to identify and locate the dataset.
+\item A paragraph describing the techniques used to obfuscate the data.
+\end{enumerate}
+
+You do not have to use any specific tools to produce the visualization.  Submit the graphs and captions as a PDF, and the relevant code to produce the graph in a separate file.
+
+%\begin{soln}
+%	% Put your answers here.
+%\end{soln}
+
+\end{enumerate}
+
+\end{document}
+
+
