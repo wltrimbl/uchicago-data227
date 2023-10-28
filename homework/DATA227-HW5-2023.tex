@@ -1,0 +1,115 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{enumitem}
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+{\Large Data 227 - Autumn 2023 \hspace{0.5cm} HW 5}\\
+\textbf{Data Visualization and Communication - Trimble}\\ %You should put your name here
+Due: Saturday November 4, 2023  11:59pm   
+\end{center}
+
+\vspace{0.2 cm}
+
+\begin{enumerate}
+
+\item
+\subsection*{Stacked bar charts + color}
+
+\begin{enumerate}
+\item A new file, names.csv, contains the "gender" of the hurricane name (by convention, the World Meteorological Society determines a list of storm names, alternating names traditionally used for males and names traditionally used for females every calendar year–see Tropical Cyclone Naming History and Retired Names). Combine storms.csv with the new file so that you have a dataframe with the name, "gender", and year of each storm. You should have about 500 distinct storms in the new dataframe (remember, some names were used in more than one year). (1 pt)
+\item  With your new dataframe, create a a stacked bar chart showing the number of storms in each year. The "stacked" categories should be the gender of the storm name. Use an appropriate color scheme for the gender categories based on the type of data you are displaying, and explain why you selected the scheme. Include a caption discussing your graph. (2 pts)
+\item  Create a scatterplot showing the tracks of each storm: longitude on the x-axis, latitude on the y-axis for the duration of each storm.  Use an appropriate color scheme for the average windspeed based on the type of data you are displaying, and explain why you selected the scheme. Include a caption discussing your graph. (2 pts)
+\item Using the graph from Part C, highlight the hurricane you tracked in Homework 2 with a different color. Use an appropriate color scheme to highlight your hurricane, and explain why you selected that scheme. (1 pt)
+\item  At some point in your career as a data scientist, you may want to create and use a custom color palette. In your data visualization module/package of choice (altair, ggplot2, matplotlib, plotnine, or seaborn), create a custom six color palette based on something you enjoy–e.g., a movie, musical album, sports team, TV show, etc. For example, consider this palette based on colors worn in the 2021 Presidential Inauguration. You may want to use a color picker such as https://imagecolorpicker.com/en. Apply the new color scheme to your graph in Part C. (2 pts)  (Many of these custom color schemes will look awful, it's true.) 
+\end{enumerate}
+
+\item
+\subsection*{New type of visualization}
+
+Using a dataset of your choosing, create a distinct type of data visualization that you have not made before. This means you may not make a bar chart, histogram, boxplots, or scatterplot–consider instead types such as a directed network graph, chloropleth map, marimeko graph, Sankey charts, "wheat" histogram plots, or others.  You might look at data you have used in the past and try to present a different view of it.  
+
+Include a figure caption and just one paragraph discussing your findings and the graphical design. 
+The figure caption should describe the origin of the dataset.
+
+Separately attach any code you used to produce the visualization.
+
+You do not have to use any specific tools to produce the visualization but you need to find something interesting and display it effectively.
+
+%\begin{soln}
+%	% Put your answers here.
+%\end{soln}
+
+\end{enumerate}
+
+\end{document}
+
+
