@@ -1,0 +1,159 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+\begin{document}
+
+\begin{center}
+{\Large Data 227 - Autumn 2023 \hspace{0.5cm} Term project }\\
+\textbf{Data Visualization \& Communication - Trimble}\\ %You should put your name here
+Due:  Friday, Dec 1, 2023, 11:59pm (Friday 9th week) 
+\end{center}
+
+\vspace{0.2 cm}
+
+\subsection*{Visualization project - tell a story with graphs}
+
+\begin{enumerate}
+\item\label{norms}
+
+For this assignment, you will create a series of four related visualizations that tell a story. Related visualizations could show an overview of a dataset, breakdowns and aggregations at different levels, or could compare or combine datasets on related topics to expand the strength of inferences (you might want to look up ancillary data like population, consumer price index, migration rates, etc.). Find a truth in the data, find a way to share this truth, and share some context about the dataset in which it was found in using the visualizations.
+
+
+\begin{itemize}
+\item 
+At least two visualizations which encode more than 9 data elements. Data-poor (less than 10 numbers) graphics are permitted, but no more than two graphics should be considered data poor.
+
+\item 
+A figure caption for each graphic. This can be short. You will probably need to number the graphics, and you have to split your text between body and caption.
+\item 
+A paragraph describing each visualization, what it says and what it means. The paragraphs might include summary statistics when necessary, and you are welcome to include tables that may help your audience interpret your graph if appropriate. Low-effectiveness visualizations are not virtuous here as they were on the first project; if a visualization is just as effective as a table, a table should be preferred.
+\item 
+ A citation for the source/provenance of your dataset. This must be in the report somewhere, but does not need to be in every caption.
+\item 
+ A paragraph of critique or commentary on your design (or a draft of your design) from another student in the class.
+
+\item  You should investigate and briefly explain the origin and the meaning of the dataset.  When, where is the data from and why might we care about it?  
+
+\item A footnote or an entry in the bibliography must indicate the origin of the dataset in sufficient detail to permit it to be found, with dataset name, author, revision number in addition to the URL where it can be found today.  Footnotes for background and other work must be adequate. 
+
+\item Turn in a project proposal (or project draft), and we will look at it and give you the same kind of feedback.  
+
+%\item You should report something about what other people have found looking at this data or data of this sort.  This requires research outside the dataset, and requires a footnote or bibliographic entry.
+
+%\item You should apply a data modeling / data reduction technique from the class to summarize / compress / understand / predict something about the dataset.  Some kind of evaluation of your model is appropriate.
+
+%\item  Present summaries of the data and your model of the data as visualizations.  Visualizations should be appropriate and informative.  Can you tell which terms in the model are most important?
+
+\item Visualizations should be free of correctable flaws; everything that needs a label must be labeled, fonts must be no smaller than half the font size of the text in the report; included images must not be grainy or illegible.  Best practice is to write a caption for each figure that succinctly explains the figure.
+
+\item Most of your grade will be on the quality of your data reporting. Explaining what is in a dataset is difficult, and doing it in a way that is easy to read is even more so.  Does the dataset have obvious utility or immediately raise questions?  Can you answer at least some of those for someone unfamiliar with the dataset?
+
+\item Page limit: 6 pages including visualizations, not including bibliography or submitted code.  Some people could do a good job in 4 pages.
+
+\item You do not have to use any specific tools to produce the visualization, but you must submit the substantial code you used to perform modeling and generate visualizations.  
+
+\item This is an individual project.  You are welcome to collaborate, look at the same data, and share code (with credit) but I expect one report per student, with a different angle on the data if two students are working together on a dataset.  
+
+\end{itemize}
+
+% There are many places which collect / index datasets, sometimes because they are cool or because they have been analyzed before, sometimes as part of their mission (census bureau, agriculture department, energy department, labor department...).  Data producers and publishers have their reasons for collecting and publishing.
+
+%\begin{itemize}
+
+%\item  Awesome public datasets (github awesomedata)
+
+%\texttt{https://github.com/awesomedata/awesome-public-datasets}
+
+%\item Dataquest's listicle
+%Paruchuri, Vik, 21 Places to Find Free Datasets for Data Science Projects, published at dataquest.io:  \texttt{https://www.dataquest.io/blog/free-datasets-for-projects/}
+
+%\item The Guttmacher institute publishes data related to women's health,  historical trends and geographical trends in fertility.
+%\texttt{https://www.guttmacher.org/public-use-datasets}
+
+%\item Centers for Medicare and Medicaid Open Payments publishes a database of payments that pharmacutical manufacturers make to prescribers in the US, (dubbed by Propublica ``Dollars for Docs'')
+
+%\texttt{https://openpaymentsdata.cms.gov/}
+
+%\item Chicago City Data portal.  Municipal datasets of various sorts; city finances, communication, and enforcement.
+
+%\texttt{https://data.cityofchicago.org/}
+
+%\end{itemize}
+
+%\begin{soln}
+%	% Put your answers here.
+%\end{soln}
+
+\end{enumerate}
+
+\end{document}
+
+
